@@ -55,4 +55,21 @@ describe "StaticPages" do
     	page.should have_selector('title', :text => "About Us")
     end
   end
+
+  describe "Contact Page" do
+    it "should fetch contact page with 200 ok response" do
+    	get static_pages_contact_path
+    	response.status.should be(200)
+    end
+
+    it "should have content 'Contact'" do
+      visit '/static_pages/contact'
+      page.should have_selector('h1', :text => "Contact")
+    end
+
+    it "should have the right title" do
+      visit '/static_pages/contact'
+      page.should have_selector('title', :text => "Contact")
+    end
+  end
 end
