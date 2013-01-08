@@ -1,5 +1,7 @@
 MobileAppManager::Application.routes.draw do
 
+  get "users/new"
+
   # set the root route (creates the root_path and root_url named routes)
   root to: 'static_pages#home'
 
@@ -7,6 +9,7 @@ MobileAppManager::Application.routes.draw do
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
+  match '/signup',  to: 'users#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
